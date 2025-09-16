@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <div className="z-4 flex items-center justify-between w-full fixed top-0">
-      <div className="p-2">
+      <div className="p-2 bg-black">
         <Link href={"/"}>
           <div className="w-25">
             <svg
@@ -33,17 +33,16 @@ const Navbar = () => {
         onMouseLeave={() => {
           navYellowRef.current.style.height = "0%";
         }}
-        className="w-[16vw] h-15 bg-black "
+        className="w-60 h-15 bg-black "
       >
         <div
           ref={navYellowRef}
           onClick={() => setIsNavOpen(true)}
-          className="absolute top-0 h-0 w-full bg-[#D3FD50] cursor-pointer transition-all"
+          className="absolute  top-0 h-0 w-full bg-[#D3FD50] cursor-pointer transition-all"
         ></div>
-        <div className="relative">
-          <div className="h-1 bg-white w-15 top-5 absolute right-6"></div>
-          <div className="h-1 bg-white w-7 top-7 absolute right-6"></div>
-          <div></div>
+        <div className="relative  ">
+          <div className="h-1 bg-white  w-15 top-5 absolute right-6"></div>
+          <div className="h-1  bg-white w-7 top-7 absolute right-6"></div>
         </div>
       </div>
       <FullScreenNav />

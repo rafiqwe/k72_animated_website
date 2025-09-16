@@ -40,7 +40,7 @@ const Page = () => {
     gsap.to(imageDivRef.current, {
       scrollTrigger: {
         trigger: imageDivRef.current,
-        markers: true,
+        // markers: true,
         start: "top 28%",
         end: "top -160%",
         pin: true,
@@ -64,10 +64,10 @@ const Page = () => {
 
   return (
     <>
-      <div className="section1">
+      <div className="section1 relative">
         <div
           ref={imageDivRef}
-          className="absolute h-[20vw] w-[14.5vw] rounded-3xl left-[31vw] top-35 overflow-hidden"
+          className="absolute h-[20vw] w-[14.5vw] rounded-3xl  left-[31vw] lg:top-35 overflow-hidden"
         >
           <Image
             src={currentImage}
@@ -78,13 +78,13 @@ const Page = () => {
           />
         </div>
         <div className={`relative ${myFont.className} py-1`}>
-          <div className="mt-[56vh]">
+          <div className="lg:mt-[56vh] mt-[35vh]">
             <h1 className="text-[20vw] text-center uppercase leading-[17vw]">
               SEVEN7Y <br /> TWO
             </h1>
           </div>
-          <div className="pl-[40%] mt-10">
-            <p className="text-6xl">
+          <div className="lg:pl-[40%] px-5 mt-10">
+            <p className="lg:text-6xl text-xl  w-full">
               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp; &nbsp; We’re inquisitive and open-minded, and we make
               sure creativity crowds out ego from every corner. A brand is a

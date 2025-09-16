@@ -4,12 +4,14 @@ import React, { useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
+import { useNav } from "@/app/contexts/NavContext";
 
 const Stair = ({ children }) => {
   const stairParentRef = useRef(null);
   const tlRef = useRef(null);
   const pageRef = useRef(null);
   const pathname = usePathname();
+  const { isNavOpen, setIsNavOpen } = useNav();
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -24,13 +26,13 @@ const Stair = ({ children }) => {
     tl.from(".stair", {
       scaleY: 0,
       transformOrigin: "top center",
-      stagger: { amount: -0.3 },
+      stagger: { amount: -0.25 },
     });
 
     // slide out to reveal page
     tl.to(".stair", {
       y: "100%",
-      stagger: { amount: -0.3 },
+      stagger: { amount: -0.25 },
     });
 
     // hide overlay + reset
@@ -54,7 +56,7 @@ const Stair = ({ children }) => {
     if (tlRef.current) {
       tlRef.current.restart();
     }
-  }, [pathname]);
+  }, [pathname, isNavOpen]);
 
   return (
     <>
